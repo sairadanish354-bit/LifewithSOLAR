@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Change Life — Next-Gen Clean Energy & Solar Solutions</title>
+  <meta name="description" content="Eco-friendly, cost-effective, and reliable solar energy systems with 3D interactive scrollytelling. Save 20%+ on electricity and reduce carbon footprint by 30%.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- FIXED 3D SCROLL ANIMATION CANVAS BACKGROUND -->
+  <div id="canvas-wrapper">
+    <canvas id="animation-canvas"></canvas>
+    <!-- Ambient atmospheric vignette & tech grid overlay -->
+    <div class="canvas-ambient-glow"></div>
+    <div class="canvas-vignette"></div>
+  </div>
+
+  <!-- STICKY TOP UTILITY / NAVIGATION BAR -->
+  <header id="top-nav-bar">
+    <div class="nav-inner max-width-container">
+      <a href="#hero" class="nav-brand" id="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+          <ellipse cx="12" cy="12" rx="4.2" ry="9" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M4.5 7.5C6.8 8.8 17.2 8.8 19.5 7.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M4.5 16.5C6.8 15.2 17.2 15.2 19.5 16.5" stroke="currentColor" stroke-width="1.3"/>
+          <circle cx="12" cy="12" r="1.8" fill="#d4f842"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">SOLAR CHANGE LIFE</span>
+          <span class="brand-subtitle">PAKISTAN SOLAR CO.</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active" data-target="hero">Home</a>
+        <a href="#technology" class="nav-link" data-target="technology">Technology</a>
+        <a href="#products-section" class="nav-link" data-target="products-section">Products</a>
+        <a href="#services-section" class="nav-link" data-target="services-section">Services</a>
+        <a href="#about-section" class="nav-link" data-target="about-section">About us</a>
+        <a href="#blog-section" class="nav-link" data-target="blog-section">Insights</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <div class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span class="status-text">3D Solar Sync</span>
+        </div>
+        <button class="btn btn-primary" id="btn-nav-get-started">
+          <span>Get Started</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="mobile-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#hero" class="mobile-nav-link" data-target="hero">Home</a>
+      <a href="#technology" class="mobile-nav-link" data-target="technology">Technology</a>
+      <a href="#products-section" class="mobile-nav-link" data-target="products-section">Products</a>
+      <a href="#services-section" class="mobile-nav-link" data-target="services-section">Services</a>
+      <a href="#about-section" class="mobile-nav-link" data-target="about-section">About us</a>
+      <a href="#blog-section" class="mobile-nav-link" data-target="blog-section">Insights</a>
+      <div class="mobile-menu-btn-wrap">
+        <button class="btn btn-primary full-width" id="btn-mobile-get-started">Get Free Solar Quote</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SCROLLABLE PAGE CONTENT CONTAINER -->
+  <div id="scroll-container">
+    
+    <!-- 1. HERO SECTION (0% - 15% Scroll) -->
+    <section id="hero" class="section-stage hero-stage">
+      <div class="hero-frame-card">
+        <!-- Top Glow Frost -->
+        <div class="hero-card-frost"></div>
+        <div class="hero-ambient-orb"></div>
+
+        <!-- Middle: Giant SOLAR wordmark + 3D Prism Facet -->
+        <div class="hero-centerpiece">
+          <div class="solar-giant-wordmark" aria-hidden="true">SOLAR</div>
+          <div class="solar-prism-facet-svg-wrap">
+            <svg viewBox="0 0 800 450" class="solar-prism-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="prismGrad" x1="400" y1="90" x2="400" y2="360" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#d9e6f2" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#8ba2b5" stop-opacity="0.75" />
+                  <stop offset="75%" stop-color="#414d5a" stop-opacity="0.8" />
+                  <stop offset="100%" stop-color="#1e2936" stop-opacity="0.95" />
+                </linearGradient>
+                <linearGradient id="prismHighlight" x1="160" y1="200" x2="640" y2="200" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7" />
+                  <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.3" />
+                </linearGradient>
+                <linearGradient id="prismRim" x1="400" y1="90" x2="400" y2="360" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#d4f842" stop-opacity="0.4" />
+                </linearGradient>
+                <pattern id="prismGridPattern" width="36" height="22" patternUnits="userSpaceOnUse">
+                  <path d="M 36 0 L 0 0 0 22" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.8" />
+                  <circle cx="18" cy="11" r="0.9" fill="rgba(212,248,66,0.4)" />
+                </pattern>
+              </defs>
+              <!-- Top Facet Surface -->
+              <polygon points="400,90 680,180 400,320 120,180" fill="url(#prismGrad)" stroke="url(#prismRim)" stroke-width="1.8" />
+              <!-- Photovoltaic Grid Overlay -->
+              <polygon points="400,90 680,180 400,320 120,180" fill="url(#prismGridPattern)" opacity="0.75" />
+              <!-- Beveled Edges -->
+              <polygon points="120,180 400,320 400,345 120,205" fill="#141a20" opacity="0.9" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+              <polygon points="400,320 680,180 680,205 400,345" fill="#242c35" opacity="0.9" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+              <!-- Sun Light Reflection Glint -->
+              <path d="M 330,115 L 470,295" stroke="url(#prismHighlight)" stroke-width="3" stroke-linecap="round" opacity="0.65" filter="blur(2px)" />
+              <path d="M 350,120 L 450,290" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
+              <circle cx="400" cy="205" r="3" fill="#ffffff" />
+              <circle cx="400" cy="205" r="16" fill="#ffffff" opacity="0.3" filter="blur(5px)" />
+              <circle cx="400" cy="205" r="32" fill="#d4f842" opacity="0.2" filter="blur(10px)" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bottom Layout: Hero Content (Left) + Metric Cards & Social Pill (Right) -->
+        <div class="hero-bottom-grid">
+          <!-- Left: Headline + Intro + Explore CTA -->
+          <div class="hero-copy-block">
+            <div class="hero-eyebrow-tag">
+              <svg class="spark-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>Empowering Every Roof with Clean Solar</span>
+            </div>
+            <h1 class="hero-headline">
+              <span>Harness the Power</span>
+              <span>of the Sun</span>
+            </h1>
+            <p class="hero-lead">
+              Eco-friendly, Cost-effective, and Reliable Solar Solutions for your Home and Business. Discover our Next-Gen Photovoltaic Hardware & Telemetry.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#products-section" class="btn btn-lime shadow-glow" id="btn-hero-explore">
+                <span>Explore Products</span>
+                <svg class="bolt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </a>
+              <button class="btn btn-glass" id="btn-hero-calc">
+                <span>Calculate 20% ROI</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Metric Cards & Social Proof Reviews Pill -->
+          <div class="hero-widgets-block">
+            <div class="metric-cards-row">
+              <div class="metric-card" id="card-metric-carbon" role="button" tabindex="0" title="Click for Carbon details">
+                <div class="metric-value">30%</div>
+                <div class="metric-label">
+                  <span>Reduced</span>
+                  <span>Carbon Footprint</span>
+                </div>
+                <div class="metric-hover-hint">View Impact ↗</div>
+              </div>
+
+              <div class="metric-card" id="card-metric-bills" role="button" tabindex="0" title="Click for Bill Reduction details">
+                <div class="metric-value">20%</div>
+                <div class="metric-label">
+                  <span>Reduced</span>
+                  <span>Energy Bills</span>
+                </div>
+                <div class="metric-hover-hint">View Savings ↗</div>
+              </div>
+            </div>
+
+            <!-- 10K+ Worldwide Users Pill -->
+            <div class="social-proof-pill" id="card-social-proof" role="button" tabindex="0" title="Click to read verified reviews">
+              <div class="avatar-stack">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Elena Rostova" class="avatar-img">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Marcus Vance" class="avatar-img">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" alt="Sophia Chen" class="avatar-img">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="David Kalu" class="avatar-img">
+              </div>
+              <div class="reviews-rating-info">
+                <div class="star-row">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <span class="rating-text">10K+ Worldwide Users</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Down Cue Indicator -->
+        <div class="scroll-cue-wrap">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span class="scroll-cue-text">Scroll to explore 3D solar evolution</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SCROLLYTELLING STORY BEATS / TECH HIGHLIGHTS (15% - 40% Scroll) -->
+    <section id="technology" class="section-stage tech-story-stage">
+      <div class="max-width-container">
+        <div class="story-beats-container">
+          
+          <!-- Story Beat 1 -->
+          <div class="story-beat-card glass-panel" data-frame-range="30-90">
+            <div class="beat-badge">
+              <span class="beat-num">01</span>
+              <span class="beat-tag">Photovoltaic Breakthrough</span>
+            </div>
+            <h3 class="beat-title">N-Type Bifacial Silicon Cells</h3>
+            <p class="beat-desc">
+              Harnesses direct sunlight from the sky plus albedo ground reflections underneath. Delivers up to <strong>23.4% module efficiency</strong> with zero light-induced degradation (LID).
+            </p>
+            <div class="beat-specs">
+              <div class="spec-item">
+                <span class="spec-num">23.4%</span>
+                <span class="spec-sub">Peak Efficiency</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-num">5400 Pa</span>
+                <span class="spec-sub">Wind Resistance</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-num">30 Yrs</span>
+                <span class="spec-sub">Linear Output</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Beat 2 -->
+          <div class="story-beat-card glass-panel" data-frame-range="90-160">
+            <div class="beat-badge">
+              <span class="beat-num">02</span>
+              <span class="beat-tag">AI Micro-Inverter Engine</span>
+            </div>
+            <h3 class="beat-title">Dual MPPT Real-Time Tracking</h3>
+            <p class="beat-desc">
+              Microsecond power point optimization dynamically extracts maximum kilowatt-hours across fluctuating cloud cover, extreme heat, and partial shade angles.
+            </p>
+            <div class="beat-specs">
+              <div class="spec-item">
+                <span class="spec-num">99.0%</span>
+                <span class="spec-sub">Peak Inversion</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-num">&lt; 10ms</span>
+                <span class="spec-sub">Grid Outage Cutover</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-num">Fanless</span>
+                <span class="spec-sub">Silent Thermal Cooling</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Beat 3 -->
+          <div class="story-beat-card glass-panel" data-frame-range="160-230">
+            <div class="beat-badge">
+              <span class="beat-num">03</span>
+              <span class="beat-tag">Intelligent Home Storage</span>
+            </div>
+            <h3 class="beat-title">PowerVault 14kWh LiFePO4</h3>
+            <p class="beat-desc">
+              Safe cobalt-free Lithium Iron Phosphate chemistry with smart Time-of-Use rate arbitrage, powering your home through blackouts and slashing nighttime grid bills.
+            </p>
+            <div class="beat-specs">
+              <div class="spec-item">
+                <span class="spec-num">14 kWh</span>
+                <span class="spec-sub">Modular Capacity</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-num">97.5%</span>
+                <span class="spec-sub">Round-trip Eff.</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-num">15 Yrs</span>
+                <span class="spec-sub">Battery Warranty</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PRODUCTS CATALOG SECTION (40% - 65% Scroll) -->
+    <section id="products-section" class="section-stage content-stage">
+      <div class="max-width-container">
+        <div class="section-header-wrap">
+          <div>
+            <div class="section-pill">
+              <svg class="pill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>Solar Change Life Hardware Ecosystem</span>
+            </div>
+            <h2 class="section-title">Premium Solar Products</h2>
+            <p class="section-subtitle">
+              Engineered for residential rooftops, commercial facilities, and microgrids demanding maximum energy yield.
+            </p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="category-tabs" id="product-category-tabs">
+            <button class="cat-tab active" data-category="All">All</button>
+            <button class="cat-tab" data-category="Residential">Residential</button>
+            <button class="cat-tab" data-category="Commercial">Commercial</button>
+            <button class="cat-tab" data-category="Storage">Storage</button>
+            <button class="cat-tab" data-category="Inverters">Inverters</button>
+          </div>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="products-grid" id="products-container">
+          <!-- Populated by JavaScript with complete rich cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICES SECTION (65% - 80% Scroll) -->
+    <section id="services-section" class="section-stage content-stage">
+      <div class="max-width-container">
+        <div class="section-header-center">
+          <div class="section-pill">
+            <span>Complete Lifecycle</span>
+          </div>
+          <h2 class="section-title">Comprehensive Solar Services</h2>
+          <p class="section-subtitle">
+            From drone satellite LiDAR surveys to certified 24/7 electrical grid monitoring, we manage every phase of your clean energy transition.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card glass-panel">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            </div>
+            <h3 class="service-card-title">Precision Solar Site Audit</h3>
+            <p class="service-card-desc">
+              High-resolution 3D LiDAR roof topology and satellite solar insolation mapping to pinpoint optimal azimuth, angle tilt, and zero-shade placement.
+            </p>
+            <div class="service-tag">LiDAR 3D Survey</div>
+          </div>
+
+          <div class="service-card glass-panel">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="service-card-title">Turnkey Installation & Permitting</h3>
+            <p class="service-card-desc">
+              End-to-end electrical engineering, local municipal utility interconnection permits, and rapid 1-2 day certified physical mounting.
+            </p>
+            <div class="service-tag">Rapid 48-Hr Deploy</div>
+          </div>
+
+          <div class="service-card glass-panel">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="service-card-title">Real-Time Energy Telemetry</h3>
+            <p class="service-card-desc">
+              Solar Change Life Cloud App tracks instantaneous solar wattage, home consumption circuits, battery storage state, and utility net-metering credits.
+            </p>
+            <div class="service-tag">Cloud Telemetry App</div>
+          </div>
+
+          <div class="service-card glass-panel">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="service-card-title">25-Year Performance Guarantee</h3>
+            <p class="service-card-desc">
+              Zero-deductible hardware replacement, inverter coverage, and guaranteed 85%+ generation output at year 25 with 24/7 dedicated support.
+            </p>
+            <div class="service-tag">100% Guaranteed Yield</div>
+          </div>
+        </div>
+
+        <div class="services-cta-center">
+          <button class="btn btn-outline-lime" id="btn-service-schedule">
+            <span>Schedule an On-Site Solar Assessment</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ABOUT & GLOBAL IMPACT SECTION (80% - 90% Scroll) -->
+    <section id="about-section" class="section-stage content-stage">
+      <div class="max-width-container">
+        <div class="about-grid">
+          <div class="about-info-col">
+            <div class="section-pill">
+              <span>About Solar Change Life</span>
+            </div>
+            <h2 class="section-title">Pioneering the Next Era of Distributed Clean Energy</h2>
+            <p class="about-body-text">
+              Founded with the belief that clean power should be as dependable and intuitive as flipping a switch, Solar Change Life combines aerospace-grade photovoltaic engineering with software-driven energy telemetry.
+            </p>
+            <p class="about-sub-text">
+              Our patented N-Type bifacial solar cells capture direct irradiance as well as albedo reflections from the roof surface, delivering up to 30% greater energy density across the system lifecycle compared to legacy silicon modules.
+            </p>
+
+            <div class="about-features-row">
+              <div class="about-mini-card glass-panel">
+                <div class="mini-card-head">
+                  <svg class="lime-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                  <span>Zero-Carbon Mission</span>
+                </div>
+                <p>100% recyclable components and ethical closed-loop silicon supply chains.</p>
+              </div>
+
+              <div class="about-mini-card glass-panel">
+                <div class="mini-card-head">
+                  <svg class="lime-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                  <span>Tier-1 Certified</span>
+                </div>
+                <p>Ranked Top Performer by PVEL & DNV GL for extreme thermal endurance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Metrics Card -->
+          <div class="about-stats-col">
+            <div class="impact-stats-card glass-panel">
+              <div class="impact-card-head">
+                <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <h3>Global Clean Energy Impact</h3>
+              </div>
+              <div class="impact-stats-grid">
+                <div class="stat-box">
+                  <div class="stat-number">450+ GWh</div>
+                  <div class="stat-desc">Clean Energy Generated</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">12,400+</div>
+                  <div class="stat-desc">Installations Worldwide</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">310,000 t</div>
+                  <div class="stat-desc">CO₂ Prevented</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">99.98%</div>
+                  <div class="stat-desc">System Uptime Reliability</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BLOG & INSIGHTS SECTION (90% - 95% Scroll) -->
+    <section id="blog-section" class="section-stage content-stage">
+      <div class="max-width-container">
+        <div class="section-header-wrap">
+          <div>
+            <div class="section-pill">
+              <span>Solar Insights & Guides</span>
+            </div>
+            <h2 class="section-title">Latest Clean Tech News</h2>
+          </div>
+        </div>
+
+        <div class="blog-cards-grid">
+          <article class="blog-card glass-panel" onclick="openGetStartedModal()">
+            <div class="blog-top-meta">
+              <span class="blog-cat">Technology</span>
+              <span class="blog-date">September 2026</span>
+            </div>
+            <h3 class="blog-title">How Bifacial Solar Panels Generate Up to 30% More Energy</h3>
+            <p class="blog-excerpt">
+              Discover how backside albedo reflection transforms everyday rooftops into high-output clean power plants.
+            </p>
+            <div class="blog-footer">
+              <span>4 min read</span>
+              <span class="read-more">Read Guide ↗</span>
+            </div>
+          </article>
+
+          <article class="blog-card glass-panel" onclick="openGetStartedModal()">
+            <div class="blog-top-meta">
+              <span class="blog-cat">Financial Guide</span>
+              <span class="blog-date">August 2026</span>
+            </div>
+            <h3 class="blog-title">Understanding Clean Energy Tax Credits & Net Metering</h3>
+            <p class="blog-excerpt">
+              A step-by-step breakdown of how solar renewable credits and local net-metering reduce your initial payback timeline.
+            </p>
+            <div class="blog-footer">
+              <span>6 min read</span>
+              <span class="read-more">Read Guide ↗</span>
+            </div>
+          </article>
+
+          <article class="blog-card glass-panel" onclick="openGetStartedModal()">
+            <div class="blog-top-meta">
+              <span class="blog-cat">Battery Storage</span>
+              <span class="blog-date">July 2026</span>
+            </div>
+            <h3 class="blog-title">LiFePO4 vs NMC: Why Home Storage is Shifting to Phosphate</h3>
+            <p class="blog-excerpt">
+              Why non-toxic, cobalt-free chemistry provides superior thermal stability, higher cycle life, and peace of mind.
+            </p>
+            <div class="blog-footer">
+              <span>5 min read</span>
+              <span class="read-more">Read Guide ↗</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HIGH-CONVERSION CTA BANNER (95% - 98% Scroll) -->
+    <section class="section-stage cta-stage">
+      <div class="max-width-container">
+        <div class="cta-banner-card">
+          <div class="cta-content">
+            <div class="cta-pill">Ready When You Are</div>
+            <h2 class="cta-headline">Let’s Make Your Energy Brighter & 100% Clean.</h2>
+            <p class="cta-sub">
+              Tell us about your home or enterprise facility and our certified solar engineers will design your custom high-efficiency solar proposal within 2 hours.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <button class="btn btn-lime shadow-glow" id="btn-banner-calc">
+              <span>Generate My Free Solar Plan ↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. BRANDED FOOTER (100% Scroll) -->
+    <footer id="main-footer">
+      <div class="max-width-container footer-inner">
+        <div class="footer-brand">
+          <div class="brand-logo-group">
+            <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+              <ellipse cx="12" cy="12" rx="4.2" ry="9" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="1.8" fill="#d4f842"/>
+            </svg>
+            <span class="brand-title">SOLAR CHANGE LIFE</span>
+          </div>
+          <p class="footer-tagline">Clean Energy for Every Roof. Clear Future for Our World.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <a href="#hero">Home</a>
+          <a href="#technology">Technology</a>
+          <a href="#products-section">Products</a>
+          <a href="#services-section">Services</a>
+          <a href="#about-section">About us</a>
+          <a href="#blog-section">Insights</a>
+        </div>
+
+        <div class="footer-bottom-meta">
+          <button class="btn btn-outline-sm" onclick="openGetStartedModal()">Get Free Proposal</button>
+          <p class="copyright-text">
+            © 2026 Solar Change Life / Pakistan Solar Company. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /#scroll-container -->
+
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODALS -->
+  <!-- ============================================================ -->
+
+  <!-- MODAL 1: GET STARTED / SOLAR ROI CALCULATOR & LEAD FORM -->
+  <div class="modal-overlay" id="modal-get-started" aria-hidden="true">
+    <div class="modal-card modal-lg">
+      <button class="modal-close-btn" data-close-modal="modal-get-started" aria-label="Close dialog">✕</button>
+
+      <div id="modal-form-view">
+        <div class="modal-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="spark-icon"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>Free Solar Feasibility Report</span>
+        </div>
+        <h3 class="modal-title">Get Started with Solar Change Life</h3>
+        <p class="modal-subtitle">
+          Calculate your guaranteed 20% bill reduction and receive a custom satellite proposal.
+        </p>
+
+        <!-- Interactive ROI Calculator Slider -->
+        <div class="calc-widget-box">
+          <div class="calc-header">
+            <span class="calc-label">Average Monthly Electric Bill:</span>
+            <span class="calc-val-display" id="bill-val-display">$240 / mo</span>
+          </div>
+          <input type="range" min="50" max="800" step="10" value="240" id="calc-bill-slider" class="range-slider">
+          
+          <div class="calc-metrics-grid">
+            <div class="calc-stat-pill">
+              <span class="calc-stat-title">20% Guaranteed Cut</span>
+              <span class="calc-stat-value" id="calc-monthly-savings">$48 / mo</span>
+            </div>
+            <div class="calc-stat-pill">
+              <span class="calc-stat-title">Estimated 25-Yr Savings</span>
+              <span class="calc-stat-value highlight-lime" id="calc-25yr-savings">$51,840</span>
+            </div>
+            <div class="calc-stat-pill">
+              <span class="calc-stat-title">Recommended System</span>
+              <span class="calc-stat-value" id="calc-system-size">9.2 kW DC</span>
+            </div>
+            <div class="calc-stat-pill">
+              <span class="calc-stat-title">Annual CO₂ Offset</span>
+              <span class="calc-stat-value" id="calc-carbon-tons">10.1 Tons</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lead Intake Form -->
+        <form id="solar-proposal-form" class="solar-lead-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name">Your Full Name</label>
+              <input type="text" id="form-name" required placeholder="e.g. Tariq Khan" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email Address</label>
+              <input type="email" id="form-email" required placeholder="name@example.com" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-phone">Phone / WhatsApp</label>
+              <input type="tel" id="form-phone" required placeholder="+92 300 1234567" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="form-city">City / Area</label>
+              <input type="text" id="form-city" required placeholder="Lahore, Karachi, Islamabad..." class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-property">Property Type</label>
+            <select id="form-property" class="form-input">
+              <option>Single Family Home / Residential</option>
+              <option>Commercial Plaza / Office</option>
+              <option>Industrial Factory / Warehouse</option>
+              <option>Agricultural Farm / Tube Well</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-lime full-width shadow-glow">
+            <span>Generate My Solar Change Life Plan ↗</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Success State -->
+      <div id="modal-success-view" class="modal-success-view" style="display: none;">
+        <div class="success-icon-circle">✓</div>
+        <h3 class="modal-title">Proposal Request Received!</h3>
+        <p class="modal-subtitle" id="success-message">
+          Thank you! Our certified solar engineer will review your roof LiDAR satellite data and WhatsApp/email your customized proposal within 2 hours.
+        </p>
+        <button class="btn btn-glass" onclick="closeAllModals()">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 2: METRIC DETAILS (CARBON / BILLS) -->
+  <div class="modal-overlay" id="modal-metric-details" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" data-close-modal="modal-metric-details" aria-label="Close dialog">✕</button>
+      
+      <div id="metric-content-carbon">
+        <div class="modal-icon-header icon-emerald">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </div>
+        <div class="metric-highlight-title">
+          <span class="giant-num">30%</span>
+          <span class="giant-tag">Average Direct Carbon Reduction</span>
+        </div>
+        <h3 class="modal-title">Reduced Carbon Footprint</h3>
+        <p class="modal-subtitle">
+          Replacing fossil grid baseload with Solar Change Life’s N-Type bifacial solar cells eliminates approximately 4.2 metric tons of carbon dioxide per household annually.
+        </p>
+
+        <div class="modal-feature-list">
+          <div class="feature-bullet">
+            <span class="bullet-check">✓</span>
+            <span>Equivalent to planting <strong>68 mature trees</strong> each year of system operation.</span>
+          </div>
+          <div class="feature-bullet">
+            <span class="bullet-check">✓</span>
+            <span>Avoids <strong>10,200 miles</strong> driven by a standard gasoline passenger vehicle.</span>
+          </div>
+          <div class="feature-bullet">
+            <span class="bullet-check">✓</span>
+            <span>100% lead-free, non-toxic cradle-to-cradle certified panel manufacturing.</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="metric-content-bills" style="display: none;">
+        <div class="modal-icon-header icon-lime">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="metric-highlight-title">
+          <span class="giant-num">20%</span>
+          <span class="giant-tag">Guaranteed Minimum Monthly Reduction</span>
+        </div>
+        <h3 class="modal-title">Reduced Energy Bills</h3>
+        <p class="modal-subtitle">
+          Our smart hybrid inverters and PowerVault battery storage automatically store daytime generation and discharge during peak utility rate hours, delivering an immediate, sustained cut to your monthly power costs.
+        </p>
+
+        <div class="modal-feature-list">
+          <div class="feature-bullet">
+            <span class="bullet-check">✓</span>
+            <span>Average monthly electricity savings: <strong>20% to 85%</strong> net offset.</span>
+          </div>
+          <div class="feature-bullet">
+            <span class="bullet-check">✓</span>
+            <span>Full ROI payback timeline achieved within <strong>3.5 to 5.5 years</strong>.</span>
+          </div>
+          <div class="feature-bullet">
+            <span class="bullet-check">✓</span>
+            <span>Complete shield against ongoing utility unit rate hikes & fuel adjustments.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions-row">
+        <button class="btn btn-glass" onclick="closeAllModals()">Close</button>
+        <button class="btn btn-lime" onclick="openGetStartedModal()">Estimate Your Property ↗</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 3: 10K+ VERIFIED REVIEWS -->
+  <div class="modal-overlay" id="modal-reviews" aria-hidden="true">
+    <div class="modal-card modal-lg">
+      <button class="modal-close-btn" data-close-modal="modal-reviews" aria-label="Close dialog">✕</button>
+
+      <div class="modal-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Verified Clean Energy Deployments</span>
+      </div>
+      <h3 class="modal-title">10,000+ Worldwide Solar Change Life Users</h3>
+      <p class="modal-subtitle">
+        Real feedback from residential homeowners, commercial facility operators, and sustainability champions.
+      </p>
+
+      <!-- Rating summary -->
+      <div class="reviews-summary-bar">
+        <div class="score-group">
+          <span class="big-score">4.96</span>
+          <div>
+            <div class="star-row">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <span class="score-count">Based on 10,480+ verified installations</span>
+          </div>
+        </div>
+        <div class="guarantee-tag">100% Guaranteed 25-Yr Yield</div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="reviews-scroll-list">
+        <div class="review-item">
+          <div class="review-item-head">
+            <div class="reviewer-meta">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Elena Rostova" class="reviewer-avatar">
+              <div>
+                <div class="reviewer-name">Elena Rostova</div>
+                <div class="reviewer-loc">Homeowner • Denver, CO</div>
+              </div>
+            </div>
+            <div class="reviewer-stat">
+              <div class="star-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <span class="savings-tag">$2,850 saved / yr</span>
+            </div>
+          </div>
+          <p class="review-item-comment">
+            "Installed 24 Solar Change Life Ultra panels with the PowerVault battery. Our summer utility bill dropped from $320 down to $14 in grid connection fees!"
+          </p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-item-head">
+            <div class="reviewer-meta">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Marcus Vance" class="reviewer-avatar">
+              <div>
+                <div class="reviewer-name">Marcus Vance</div>
+                <div class="reviewer-loc">Sustainable Architect • Austin, TX</div>
+              </div>
+            </div>
+            <div class="reviewer-stat">
+              <div class="star-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <span class="savings-tag">$3,400 saved / yr</span>
+            </div>
+          </div>
+          <p class="review-item-comment">
+            "The aesthetics are stunning. Clean black finish with no messy silver grid lines. The real-time telemetry app makes monitoring yields effortless."
+          </p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-item-head">
+            <div class="reviewer-meta">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" alt="Sophia Chen" class="reviewer-avatar">
+              <div>
+                <div class="reviewer-name">Sophia Chen</div>
+                <div class="reviewer-loc">Facility Director • San Diego, CA</div>
+              </div>
+            </div>
+            <div class="reviewer-stat">
+              <div class="star-row"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <span class="savings-tag">$18,200 saved / yr</span>
+            </div>
+          </div>
+          <p class="review-item-comment">
+            "We outfitted our 12,000 sq ft distribution center with Solar Change Life arrays. Decreased our grid dependency by 74% and hit our ESG target ahead of schedule."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 4: PRODUCT DETAIL & CUSTOM HARDWARE QUOTE -->
+  <div class="modal-overlay" id="modal-product-detail" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" data-close-modal="modal-product-detail" aria-label="Close dialog">✕</button>
+
+      <div class="modal-badge" id="modal-prod-cat">Residential</div>
+      <h3 class="modal-title" id="modal-prod-name">Solar Change Life Ultra-Cell 460W</h3>
+      <div class="prod-modal-price" id="modal-prod-price">From $189 / panel</div>
+      <p class="modal-subtitle" id="modal-prod-desc">
+        Bifacial N-Type monocrystalline cells delivering ultra-high density power generation.
+      </p>
+
+      <div class="prod-specs-box">
+        <div class="prod-spec-row">
+          <span class="spec-k">Efficiency Rating</span>
+          <span class="spec-v" id="modal-prod-eff">22.8% Module Efficiency</span>
+        </div>
+        <div class="prod-spec-row">
+          <span class="spec-k">Manufacturer Warranty</span>
+          <span class="spec-v" id="modal-prod-warranty">25-Year Comprehensive</span>
+        </div>
+      </div>
+
+      <div class="prod-features-list-title">Key Engineered Features</div>
+      <ul class="prod-features-ul" id="modal-prod-features">
+        <!-- Injected via JS -->
+      </ul>
+
+      <div class="modal-actions-row">
+        <button class="btn btn-glass" onclick="closeAllModals()">Back</button>
+        <button class="btn btn-lime" onclick="openGetStartedModal()">Request Hardware Quote ↗</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
